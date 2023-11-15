@@ -21,6 +21,7 @@ class NhaPhatHanhController
                 $NhaPhatHanhDAO = new NhaPhatHanhDAO();
                 $NhaPhatHanhDAO->add($_POST['ten']);
                 $list = $NhaPhatHanhDAO->show();
+                $_SESSION['error'] = 'thêm mới thành công';
                 header('location: index.php?controller=nhaPhatHanh');
             } else {
                 include('views/nhaphathanh/admin/add.php');
@@ -36,6 +37,7 @@ class NhaPhatHanhController
             $NhaPhatHanhDAO = new NhaPhatHanhDAO();
             $NhaPhatHanhDAO->remove($_GET['id']);
             $list = $NhaPhatHanhDAO->show();
+            $_SESSION['error'] = 'Xoá thành công';
             header('location: index.php?controller=nhaPhatHanh');
         } else {
             include('views/home/user/Home.php');
@@ -49,6 +51,7 @@ class NhaPhatHanhController
                 $NhaPhatHanhDAO = new NhaPhatHanhDAO();
                 $NhaPhatHanhDAO->update($_POST['id'],$_POST['ten'],$_POST['trang_thai']);
                 $list = $NhaPhatHanhDAO->show();
+                $_SESSION['error'] = 'Sửa thông tin thành công';
                 header('location: index.php?controller=nhaPhatHanh');
             } else {
                 $NhaPhatHanhDAO = new NhaPhatHanhDAO();

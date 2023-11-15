@@ -1,5 +1,5 @@
 <?php
-include 'DAO/NhaSanXuatDAO.php';
+include 'DAO/NhaXuatBanDAO.php';
 class NhaXuatBanController
 {
     // lấy danh sách bộ truyện
@@ -21,6 +21,7 @@ class NhaXuatBanController
                 $NhaSanXuatDAO = new NhaSanXuatDAO();
                 $NhaSanXuatDAO->add($_POST['ten']);
                 $list = $NhaSanXuatDAO->show();
+                $_SESSION['error'] = 'thêm mới thành công';
                 header('location: index.php?controller=nhaSanXuat');
             } else {
                 include('views/nhaxuatban/admin/add.php');
@@ -36,6 +37,7 @@ class NhaXuatBanController
             $NhaSanXuatDAO = new NhaSanXuatDAO();
             $NhaSanXuatDAO->remove($_GET['id']);
             $list = $NhaSanXuatDAO->show();
+            $_SESSION['error'] = 'Xoá thành công';
             header('location: index.php?controller=nhaXuatBan');
         } else {
             include('views/home/user/Home.php');
@@ -49,6 +51,7 @@ class NhaXuatBanController
                 $NhaSanXuatDAO = new NhaSanXuatDAO();
                 $NhaSanXuatDAO->update($_POST['id'],$_POST['ten'],$_POST['trang_thai']);
                 $list = $NhaSanXuatDAO->show();
+                $_SESSION['error'] = 'Sửa thông tin thành công';
                 header('location: index.php?controller=nhaXuatBan');
             } else {
                 $NhaSanXuatDAO = new NhaSanXuatDAO();

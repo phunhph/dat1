@@ -21,6 +21,7 @@ class LoaiSanPhamController
                 $LoaiTruyenDAO = new LoaiTruyenDAO();
                 $LoaiTruyenDAO->add($_POST['ten']);
                 $list = $LoaiTruyenDAO->show();
+                $_SESSION['error'] = 'thêm mới thành công';
                 header('location: index.php?controller=loaisanpham');
             } else {
                 include('views/danhmuc/admin/add.php');
@@ -36,6 +37,7 @@ class LoaiSanPhamController
             $LoaiTruyenDAO = new LoaiTruyenDAO();
             $LoaiTruyenDAO->remove($_GET['id']);
             $list = $LoaiTruyenDAO->show();
+            $_SESSION['error'] = 'Xoá thành công';
             header('location: index.php?controller=loaisanpham');
         } else {
             include('views/home/user/Home.php');
@@ -49,6 +51,7 @@ class LoaiSanPhamController
                 $LoaiTruyenDAO = new LoaiTruyenDAO();
                 $LoaiTruyenDAO->update($_POST['id'],$_POST['ten'],$_POST['trang_thai']);
                 $list = $LoaiTruyenDAO->show();
+                $_SESSION['error'] = 'Sửa thông tin thành công';
                 header('location: index.php?controller=loaisanpham');
             } else {
                 $LoaiTruyenDAO = new LoaiTruyenDAO();

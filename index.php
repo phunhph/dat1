@@ -175,3 +175,4 @@ switch ($controller) {
     default:
         break;
 }
+// unset($_SESSION['error']);

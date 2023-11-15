@@ -6,7 +6,11 @@
 <div class="container-fluid">
     <!-- Page Heading -->
     <h1 class="h3 mb-2 text-gray-800">Danh sách Nhà Xuất Bản</h1>
-
+    <h1>
+        <?php if (isset($_SESSION['error'])) {
+            echo $_SESSION['error'];
+        } ?>
+    </h1>
     <!-- DataTales Example -->
     <div class="card shadow mb-4">
         <div class="card-body">
@@ -36,7 +40,7 @@
                             <tr>
                                 <td><?php echo $key + 1 ?></td>
                                 <td><?php echo $vl->ten ?></td>
-                                <td>Edinburgh</td>
+                                <td><?php echo $vl->soluong ?></td>
                                 <td><?php echo $vl->trang_thai ?></td>
                                 <td>
                                     <a href="index.php?controller=nhaXuatBan_delete&id=<?php echo $vl->id ?>">xoá</a>/
