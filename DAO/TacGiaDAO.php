@@ -54,8 +54,8 @@ class TacGiaDAO
     {
         $sql = "SELECT tac_gia.*, COUNT(san_pham.id_san_pham) AS so_luong_sach
         FROM tac_gia
-        LEFT JOIN san_pham ON tac_gia.id_tac_gia = san_pham.tac_gia
-        WHERE `id_tac_gia`=$id
+        LEFT JOIN san_pham ON tac_gia.id_tac_gia = san_pham.id_tac_gia
+        WHERE tac_gia.id_tac_gia=$id
         GROUP BY tac_gia.id_tac_gia;";
         $stmt = $this->PDO->prepare($sql);
         $stmt->execute();
