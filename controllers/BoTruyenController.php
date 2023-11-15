@@ -22,6 +22,7 @@ class BoTruyenController
                 $BoTruyenDAO = new BoTruyenDAO();
                 $BoTruyenDAO->add($_POST['ten']);
                 $list = $BoTruyenDAO->show();
+                $_SESSION['error'] = 'thêm mới thành công';
                 header('location: index.php?controller=boTruyen');
             } else {
                 include('views/botruyen/admin/add.php');
@@ -37,6 +38,7 @@ class BoTruyenController
             $BoTruyenDAO = new BoTruyenDAO();
             $BoTruyenDAO->remove($_GET['id']);
             $list = $BoTruyenDAO->show();
+            $_SESSION['error'] = 'Xoá thành công';
             header('location: index.php?controller=boTruyen');
         } else {
             include('views/home/user/Home.php');
@@ -50,6 +52,7 @@ class BoTruyenController
                 $BoTruyenDAO = new BoTruyenDAO();
                 $BoTruyenDAO->update($_POST['id'],$_POST['ten'],$_POST['trang_thai']);
                 $list = $BoTruyenDAO->show();
+                $_SESSION['error'] = 'Sửa thông tin thành công';
                 header('location: index.php?controller=boTruyen');
             } else {
                 $BoTruyenDAO = new BoTruyenDAO();

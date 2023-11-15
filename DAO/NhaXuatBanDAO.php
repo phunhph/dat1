@@ -1,5 +1,5 @@
 <?php
-include 'models/NhaSanXuat.php';
+include 'models/NhaXuatBan.php';
 class NhaSanXuatDAO {
     // kết nối database
     private $PDO;
@@ -16,14 +16,17 @@ class NhaSanXuatDAO {
     }
     // lấy danh sách bộ truyện
     public function show(){
-        $sql = "SELECT * FROM `nha_san_xuat` WHERE 1";
+        $sql = "SELECT nha_san_xuat.*, COUNT(san_pham.id_san_pham) AS so_luong_sach
+        FROM nha_san_xuat
+        LEFT JOIN san_pham ON nha_san_xuat.id_nha_san_xuat = san_pham.id_nha_san_xuat
+        GROUP BY nha_san_xuat.id_nha_san_xuat;";
         $stmt = $this->PDO->prepare($sql);
         $stmt->execute();
         $lists = array(); // hoặc $products = [];
 
         while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
             // Tạo đối tượng sản phẩm từ dữ liệu và thêm vào danh sách
-            $product = new BoTruyen($row['id_nha_san_xuat'], $row['ten_nha_san_xuat'], $row['trang_thai']);
+            $product = new NhaXuatBan($row['id_nha_san_xuat'], $row['ten_nha_san_xuat'], $row['trang_thai'], $row['so_luong_sach']);
             $lists[] = $product;
         }
 
@@ -45,7 +48,7 @@ class NhaSanXuatDAO {
 
         while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
             // Tạo đối tượng sản phẩm từ dữ liệu và thêm vào danh sách
-            $product = new BoTruyen($row['id_nha_san_xuat'], $row['ten_nha_san_xuat'], $row['trang_thai']);
+            $product = new NhaXuatBan($row['id_nha_san_xuat'], $row['ten_nha_san_xuat'], $row['trang_thai'],0);
             $lists[] = $product;
         }
         return $lists;

@@ -6,7 +6,11 @@
 <div class="container-fluid">
     <!-- Page Heading -->
     <h1 class="h3 mb-2 text-gray-800">Danh sách loại truyện</h1>
-
+    <h1>
+        <?php if (isset($_SESSION['error'])) {
+            echo $_SESSION['error'];
+        } ?>
+    </h1>
     <!-- DataTales Example -->
     <div class="card shadow mb-4">
         <div class="card-body">

@@ -16,14 +16,17 @@ class BoTruyenDAO {
     }
     // lấy danh sách bộ truyện
     public function show(){
-        $sql = "SELECT * FROM `bo_truyen` WHERE 1";
+        $sql = "SELECT bo_truyen.*, COUNT(san_pham.id_san_pham) AS so_luong_sach
+        FROM bo_truyen
+        LEFT JOIN san_pham ON bo_truyen.id_bo_truyen = san_pham.id_bo_truyen
+        GROUP BY bo_truyen.id_bo_truyen;";
         $stmt = $this->PDO->prepare($sql);
         $stmt->execute();
         $lists = array(); // hoặc $products = [];
 
         while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
             // Tạo đối tượng sản phẩm từ dữ liệu và thêm vào danh sách
-            $product = new BoTruyen($row['id_bo_truyen'], $row['ten_bo_truyen'], $row['trang_thai']);
+            $product = new BoTruyen($row['id_bo_truyen'], $row['ten_bo_truyen'], $row['trang_thai'], $row['so_luong_sach']);
             $lists[] = $product;
         }
 
@@ -45,7 +48,7 @@ class BoTruyenDAO {
 
         while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
             // Tạo đối tượng sản phẩm từ dữ liệu và thêm vào danh sách
-            $product = new BoTruyen($row['id_bo_truyen'], $row['ten_bo_truyen'], $row['trang_thai']);
+            $product = new BoTruyen($row['id_bo_truyen'], $row['ten_bo_truyen'], $row['trang_thai'],0);
             $lists[] = $product;
         }
         return $lists;

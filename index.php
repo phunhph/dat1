@@ -1,5 +1,8 @@
+
 <?php
+
 session_start();
+$_SESSION['role'] =1;
 include 'controllers/LoginController.php';
 include 'controllers/HomeController.php';
 include 'controllers/ProductController.php';
@@ -12,8 +15,6 @@ include 'controllers/NhaPhatHanhController.php';
 include 'controllers/NhaXuatBanController.php';
 include 'controllers/TacGiaController.php';
 include 'controllers/TaiKhoanController.php';
-include 'controllers/ChatBoxController.php';
-include 'controllers/BinhLuanController.php';
 
 $controller = $_GET['controller'] ?? 'home';
 // routing controller
@@ -31,10 +32,6 @@ switch ($controller) {
         $LoginController->signup();
         break;
     case 'logout':
-        $LoginController = new LoginController();
-        $LoginController->logout();
-        break;
-    case 'forgot':
         break;
     case 'product':
         $ProductController = new ProductController();
@@ -50,15 +47,15 @@ switch ($controller) {
         break;
     case 'nhaPhatHanh_add':
         $NhaPhathanhController = new NhaphathanhController();
-        $NhaPhathanhController->index();
+        $NhaPhathanhController->add();
         break;
     case 'nhaPhatHanh_fix':
         $NhaPhathanhController = new NhaphathanhController();
-        $NhaPhathanhController->index();
+        $NhaPhathanhController->update();
         break;
     case 'nhaPhatHanh_delete':
         $NhaPhathanhController = new NhaphathanhController();
-        $NhaPhathanhController->index();
+        $NhaPhathanhController->remove();
         break;
     case 'nhaXuatBan':
         $NhaXuatController = new NhaXuatBanController();
@@ -66,15 +63,15 @@ switch ($controller) {
         break;
     case 'nhaXuatBan_add':
         $NhaXuatController = new NhaXuatBanController();
-        $NhaXuatController->index();
+        $NhaXuatController->add();
         break;
     case 'nhaXuatBan_fix':
         $NhaXuatController = new NhaXuatBanController();
-        $NhaXuatController->index();
+        $NhaXuatController->update();
         break;
     case 'nhaXuatBan_delete':
         $NhaXuatController = new NhaXuatBanController();
-        $NhaXuatController->index();
+        $NhaXuatController->remove();
         break;
     case 'donHang':
         $DonHangController = new DonHangController();
@@ -102,11 +99,11 @@ switch ($controller) {
         break;
     case 'boTruyen_fix':
         $BoTruyenController = new BoTruyenController();
-        $BoTruyenController->index();
+        $BoTruyenController->update();
         break;
     case 'boTruyen_delete':
         $BoTruyenController = new BoTruyenController();
-        $BoTruyenController->index();
+        $BoTruyenController->remove();
         break;
     case 'loaisanpham':
         $loaiSanPhamController = new LoaiSanPhamController();
@@ -114,15 +111,15 @@ switch ($controller) {
         break;
     case 'loaisanpham_add':
         $loaiSanPhamController = new LoaiSanPhamController();
-        $loaiSanPhamController->index();
+        $loaiSanPhamController->add();
         break;
     case 'loaisanpham_fix':
         $loaiSanPhamController = new LoaiSanPhamController();
-        $loaiSanPhamController->index();
+        $loaiSanPhamController->update();
         break;
     case 'loaisanpham_delete':
         $loaiSanPhamController = new LoaiSanPhamController();
-        $loaiSanPhamController->index();
+        $loaiSanPhamController->remove();
         break;
     case 'tacGia':
         $TacGiaController = new TacGiaController();
