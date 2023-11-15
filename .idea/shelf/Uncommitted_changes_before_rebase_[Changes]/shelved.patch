@@ -1,0 +1,203 @@
+Index: .idea/php.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/php.xml b/.idea/php.xml
+new file mode 100644
+--- /dev/null	(date 1700062780220)
++++ b/.idea/php.xml	(date 1700062780220)
+@@ -0,0 +1,22 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<project version="4">
++  <component name="MessDetectorOptionsConfiguration">
++    <option name="transferred" value="true" />
++  </component>
++  <component name="PHPCSFixerOptionsConfiguration">
++    <option name="transferred" value="true" />
++  </component>
++  <component name="PHPCodeSnifferOptionsConfiguration">
++    <option name="highlightLevel" value="WARNING" />
++    <option name="transferred" value="true" />
++  </component>
++  <component name="PhpProjectSharedConfiguration" php_language_level="7.3">
++    <option name="suggestChangeDefaultLanguageLevel" value="false" />
++  </component>
++  <component name="PhpStanOptionsConfiguration">
++    <option name="transferred" value="true" />
++  </component>
++  <component name="PsalmOptionsConfiguration">
++    <option name="transferred" value="true" />
++  </component>
++</project>
+\ No newline at end of file
+Index: .idea/vcs.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/vcs.xml b/.idea/vcs.xml
+new file mode 100644
+--- /dev/null	(date 1700062780269)
++++ b/.idea/vcs.xml	(date 1700062780269)
+@@ -0,0 +1,6 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<project version="4">
++  <component name="VcsDirectoryMappings">
++    <mapping directory="" vcs="Git" />
++  </component>
++</project>
+\ No newline at end of file
+Index: .idea/.gitignore
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/.gitignore b/.idea/.gitignore
+new file mode 100644
+--- /dev/null	(date 1700062783090)
++++ b/.idea/.gitignore	(date 1700062783090)
+@@ -0,0 +1,8 @@
++# Default ignored files
++/shelf/
++/workspace.xml
++# Editor-based HTTP Client requests
++/httpRequests/
++# Datasource local storage ignored files
++/dataSources/
++/dataSources.local.xml
+Index: index.php
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?php\r\nsession_start();\r\ninclude 'controllers/LoginController.php';\r\ninclude 'controllers/HomeController.php';\r\ninclude 'controllers/ProductController.php';\r\ninclude 'controllers/SettingController.php';\r\ninclude 'controllers/CartController.php';\r\ninclude 'controllers/LoaiSanPhamController.php';\r\ninclude 'controllers/BoTruyenController.php';\r\ninclude 'controllers/DonHangController.php';\r\ninclude 'controllers/NhaPhatHanhController.php';\r\ninclude 'controllers/NhaXuatBanController.php';\r\ninclude 'controllers/TacGiaController.php';\r\ninclude 'controllers/TaiKhoanController.php';\r\ninclude 'controllers/ChatBoxController.php';\r\ninclude 'controllers/BinhLuanController.php';\r\n\r\n$controller = $_GET['controller'] ?? 'home';\r\n// routing controller\r\nswitch ($controller) {\r\n    case 'home':\r\n        $HomeController = new HomeController();\r\n        $HomeController->index();\r\n        break;\r\n    case 'login':\r\n        $LoginController = new LoginController();\r\n        $LoginController->index();\r\n        break;\r\n    case 'signup':\r\n        $LoginController = new LoginController();\r\n        $LoginController->signup();\r\n        break;\r\n    case 'logout':\r\n        $LoginController = new LoginController();\r\n        $LoginController->logout();\r\n        break;\r\n    case 'forgot':\r\n        break;\r\n    case 'product':\r\n        $ProductController = new ProductController();\r\n        $ProductController->index();\r\n        break;\r\n    case 'productDetail':\r\n        $ProductController = new ProductController();\r\n        $ProductController->productDetail();\r\n        break;\r\n    case 'nhaPhatHanh':\r\n        $NhaPhathanhController = new NhaphathanhController();\r\n        $NhaPhathanhController->index();\r\n        break;\r\n    case 'nhaPhatHanh_add':\r\n        $NhaPhathanhController = new NhaphathanhController();\r\n        $NhaPhathanhController->index();\r\n        break;\r\n    case 'nhaPhatHanh_fix':\r\n        $NhaPhathanhController = new NhaphathanhController();\r\n        $NhaPhathanhController->index();\r\n        break;\r\n    case 'nhaPhatHanh_delete':\r\n        $NhaPhathanhController = new NhaphathanhController();\r\n        $NhaPhathanhController->index();\r\n        break;\r\n    case 'nhaXuatBan':\r\n        $NhaXuatController = new NhaXuatBanController();\r\n        $NhaXuatController->index();\r\n        break;\r\n    case 'nhaXuatBan_add':\r\n        $NhaXuatController = new NhaXuatBanController();\r\n        $NhaXuatController->index();\r\n        break;\r\n    case 'nhaXuatBan_fix':\r\n        $NhaXuatController = new NhaXuatBanController();\r\n        $NhaXuatController->index();\r\n        break;\r\n    case 'nhaXuatBan_delete':\r\n        $NhaXuatController = new NhaXuatBanController();\r\n        $NhaXuatController->index();\r\n        break;\r\n    case 'donHang':\r\n        $DonHangController = new DonHangController();\r\n        $DonHangController->index();\r\n        break;\r\n    case 'donHang_add':\r\n        $DonHangController = new DonHangController();\r\n        $DonHangController->index();\r\n        break;\r\n    case 'donHang_fix':\r\n        $DonHangController = new DonHangController();\r\n        $DonHangController->index();\r\n        break;\r\n    case 'donHang_delete':\r\n        $DonHangController = new DonHangController();\r\n        $DonHangController->index();\r\n        break;\r\n    case 'boTruyen':\r\n        $BoTruyenController = new BoTruyenController();\r\n        $BoTruyenController->index();\r\n        break;\r\n    case 'boTruyen_add':\r\n        $BoTruyenController = new BoTruyenController();\r\n        $BoTruyenController->add();\r\n        break;\r\n    case 'boTruyen_fix':\r\n        $BoTruyenController = new BoTruyenController();\r\n        $BoTruyenController->index();\r\n        break;\r\n    case 'boTruyen_delete':\r\n        $BoTruyenController = new BoTruyenController();\r\n        $BoTruyenController->index();\r\n        break;\r\n    case 'loaisanpham':\r\n        $loaiSanPhamController = new LoaiSanPhamController();\r\n        $loaiSanPhamController->index();\r\n        break;\r\n    case 'loaisanpham_add':\r\n        $loaiSanPhamController = new LoaiSanPhamController();\r\n        $loaiSanPhamController->index();\r\n        break;\r\n    case 'loaisanpham_fix':\r\n        $loaiSanPhamController = new LoaiSanPhamController();\r\n        $loaiSanPhamController->index();\r\n        break;\r\n    case 'loaisanpham_delete':\r\n        $loaiSanPhamController = new LoaiSanPhamController();\r\n        $loaiSanPhamController->index();\r\n        break;\r\n    case 'tacGia':\r\n        $TacGiaController = new TacGiaController();\r\n        $TacGiaController->index();\r\n        break;\r\n    case 'tacGia_add':\r\n        $TacGiaController = new TacGiaController();\r\n        $TacGiaController->add();\r\n        break;\r\n    case 'tacGia_fix':\r\n        $TacGiaController = new TacGiaController();\r\n        $TacGiaController->update();\r\n        break;\r\n    case 'tacGia_delete':\r\n        $TacGiaController = new TacGiaController();\r\n        $TacGiaController->delete();\r\n        break;\r\n    case 'taiKhoan':\r\n        $TaiKhoansController = new TaiKhoanController();\r\n        $TaiKhoansController->index();\r\n        break;\r\n    case 'taiKhoan_add':\r\n        $TaiKhoansController = new TaiKhoanController();\r\n        $TaiKhoansController->add();\r\n        break;\r\n    case 'taiKhoan_fix':\r\n        $TaiKhoansController = new TaiKhoanController();\r\n        $TaiKhoansController->fix();\r\n        break;\r\n    case 'taiKhoan_delete':\r\n        $TaiKhoansController = new TaiKhoanController();\r\n        $TaiKhoansController->delete();\r\n        break;\r\n    case 'binhLuan':\r\n        $BinhLuanController = new BinhLuanController();\r\n        $BinhLuanController->index();\r\n        break;\r\n    case 'binhLuan_add':\r\n        break;\r\n    case 'binhLuan_delete':\r\n        break;\r\n    case 'theodoi':\r\n        break;\r\n    case 'theodoi_add':\r\n        break;\r\n    case 'theodoi_delete':\r\n        break;\r\n    case 'giohang':\r\n        break;\r\n    case 'giohang_add':\r\n        break;\r\n    case 'giohang_fix':\r\n        break;\r\n    case 'giohang_delete':\r\n        break;\r\n    case 'setting':\r\n        $SettingController = new SettingController();\r\n        $SettingController->index();\r\n        break;\r\n    case 'chatBox':\r\n        $ChatBoxController = new ChatBoxController();\r\n        $ChatBoxController->index();\r\n        break;\r\n    case 'chatBox_mes':\r\n        $ChatBoxController = new ChatBoxController();\r\n        $ChatBoxController->chat();\r\n        break;\r\n    default:\r\n        break;\r\n}\r\nunset($_SESSION['error']);\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/index.php b/index.php
+--- a/index.php	(revision 07fddab062bf72432a7a10b09c4abca666b81869)
++++ b/index.php	(date 1700064444381)
+@@ -50,15 +50,15 @@
+         break;
+     case 'nhaPhatHanh_add':
+         $NhaPhathanhController = new NhaphathanhController();
+-        $NhaPhathanhController->index();
++        $NhaPhathanhController->add();
+         break;
+     case 'nhaPhatHanh_fix':
+         $NhaPhathanhController = new NhaphathanhController();
+-        $NhaPhathanhController->index();
++        $NhaPhathanhController->update();
+         break;
+     case 'nhaPhatHanh_delete':
+         $NhaPhathanhController = new NhaphathanhController();
+-        $NhaPhathanhController->index();
++        $NhaPhathanhController->remove();
+         break;
+     case 'nhaXuatBan':
+         $NhaXuatController = new NhaXuatBanController();
+@@ -66,15 +66,15 @@
+         break;
+     case 'nhaXuatBan_add':
+         $NhaXuatController = new NhaXuatBanController();
+-        $NhaXuatController->index();
++        $NhaXuatController->add();
+         break;
+     case 'nhaXuatBan_fix':
+         $NhaXuatController = new NhaXuatBanController();
+-        $NhaXuatController->index();
++        $NhaXuatController->update();
+         break;
+     case 'nhaXuatBan_delete':
+         $NhaXuatController = new NhaXuatBanController();
+-        $NhaXuatController->index();
++        $NhaXuatController->remove();
+         break;
+     case 'donHang':
+         $DonHangController = new DonHangController();
+@@ -102,11 +102,11 @@
+         break;
+     case 'boTruyen_fix':
+         $BoTruyenController = new BoTruyenController();
+-        $BoTruyenController->index();
++        $BoTruyenController->update();
+         break;
+     case 'boTruyen_delete':
+         $BoTruyenController = new BoTruyenController();
+-        $BoTruyenController->index();
++        $BoTruyenController->remove();
+         break;
+     case 'loaisanpham':
+         $loaiSanPhamController = new LoaiSanPhamController();
+@@ -114,15 +114,15 @@
+         break;
+     case 'loaisanpham_add':
+         $loaiSanPhamController = new LoaiSanPhamController();
+-        $loaiSanPhamController->index();
++        $loaiSanPhamController->add();
+         break;
+     case 'loaisanpham_fix':
+         $loaiSanPhamController = new LoaiSanPhamController();
+-        $loaiSanPhamController->index();
++        $loaiSanPhamController->update();
+         break;
+     case 'loaisanpham_delete':
+         $loaiSanPhamController = new LoaiSanPhamController();
+-        $loaiSanPhamController->index();
++        $loaiSanPhamController->remove();
+         break;
+     case 'tacGia':
+         $TacGiaController = new TacGiaController();
+Index: views/home/admin/Home.php
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?php include \"views/layout/admin/Header.php\";\r\n?>\r\n<!-- Begin Page Content -->\r\n<div class=\"container-fluid\">\r\n\r\n    <!-- Page Heading -->\r\n    <div class=\"d-sm-flex align-items-center justify-content-between mb-4\">\r\n        <h1 class=\"h3 mb-0 text-gray-800\">Thống kê</h1>\r\n        <a href=\"#\" class=\"d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm\"><i class=\"fas fa-download fa-sm text-white-50\"></i> Generate Report</a>\r\n    </div>\r\n\r\n    <!-- Content Row -->\r\n    <div class=\"row\">\r\n\r\n        <!-- Earnings (Monthly) Card Example -->\r\n        <div class=\"col-xl-3 col-md-6 mb-4\">\r\n            <div class=\"card border-left-primary shadow h-100 py-2\">\r\n                <div class=\"card-body\">\r\n                    <div class=\"row no-gutters align-items-center\">\r\n                        <div class=\"col mr-2\">\r\n                            <div class=\"text-xs font-weight-bold text-primary text-uppercase mb-1\">\r\n                                Đơn hàng</div>\r\n                            <div class=\"h5 mb-0 font-weight-bold text-gray-800\">$40,000</div>\r\n                        </div>\r\n                        <div class=\"col-auto\">\r\n                            <i class=\"fas fa-calendar fa-2x text-gray-300\"></i>\r\n                        </div>\r\n                    </div>\r\n                </div>\r\n            </div>\r\n        </div>\r\n\r\n        <!-- Earnings (Monthly) Card Example -->\r\n        <div class=\"col-xl-3 col-md-6 mb-4\">\r\n            <div class=\"card border-left-success shadow h-100 py-2\">\r\n                <div class=\"card-body\">\r\n                    <div class=\"row no-gutters align-items-center\">\r\n                        <div class=\"col mr-2\">\r\n                            <div class=\"text-xs font-weight-bold text-success text-uppercase mb-1\">\r\n                                Doanh thu</div>\r\n                            <div class=\"h5 mb-0 font-weight-bold text-gray-800\">$215,000</div>\r\n                        </div>\r\n                        <div class=\"col-auto\">\r\n                            <i class=\"fas fa-dollar-sign fa-2x text-gray-300\"></i>\r\n                        </div>\r\n                    </div>\r\n                </div>\r\n            </div>\r\n        </div>\r\n\r\n        <!-- Earnings (Monthly) Card Example -->\r\n        <div class=\"col-xl-3 col-md-6 mb-4\">\r\n            <div class=\"card border-left-info shadow h-100 py-2\">\r\n                <div class=\"card-body\">\r\n                    <div class=\"row no-gutters align-items-center\">\r\n                        <div class=\"col mr-2\">\r\n                            <div class=\"text-xs font-weight-bold text-info text-uppercase mb-1\">Đơn hàng bị huỷ\r\n                            </div>\r\n                            <div class=\"row no-gutters align-items-center\">\r\n                                <div class=\"col-auto\">\r\n                                    <div class=\"h5 mb-0 mr-3 font-weight-bold text-gray-800\">50%</div>\r\n                                </div>\r\n                                <div class=\"col\">\r\n                                    <div class=\"progress progress-sm mr-2\">\r\n                                        <div class=\"progress-bar bg-info\" role=\"progressbar\" style=\"width: 50%\" aria-valuenow=\"50\" aria-valuemin=\"0\" aria-valuemax=\"100\"></div>\r\n                                    </div>\r\n                                </div>\r\n                            </div>\r\n                        </div>\r\n                        <div class=\"col-auto\">\r\n                            <i class=\"fas fa-clipboard-list fa-2x text-gray-300\"></i>\r\n                        </div>\r\n                    </div>\r\n                </div>\r\n            </div>\r\n        </div>\r\n\r\n        <!-- Pending Requests Card Example -->\r\n        <div class=\"col-xl-3 col-md-6 mb-4\">\r\n            <div class=\"card border-left-warning shadow h-100 py-2\">\r\n                <div class=\"card-body\">\r\n                    <div class=\"row no-gutters align-items-center\">\r\n                        <div class=\"col mr-2\">\r\n                            <div class=\"text-xs font-weight-bold text-warning text-uppercase mb-1\">\r\n                                Số lượng Hỗ trợ</div>\r\n                            <div class=\"h5 mb-0 font-weight-bold text-gray-800\">18</div>\r\n                        </div>\r\n                        <div class=\"col-auto\">\r\n                            <i class=\"fas fa-comments fa-2x text-gray-300\"></i>\r\n                        </div>\r\n                    </div>\r\n                </div>\r\n            </div>\r\n        </div>\r\n    </div>\r\n\r\n    <!-- Content Row -->\r\n\r\n    <div class=\"row\">\r\n\r\n        <!-- Area Chart -->\r\n        <div class=\"col-xl-8 col-lg-7\">\r\n            <div class=\"card shadow mb-4\">\r\n                <!-- Card Header - Dropdown -->\r\n                <div class=\"card-header py-3 d-flex flex-row align-items-center justify-content-between\">\r\n                    <h6 class=\"m-0 font-weight-bold text-primary\">Biểu đồ doanh thu theo tháng</h6>\r\n                </div>\r\n                <!-- Card Body -->\r\n                <div class=\"card-body\">\r\n                    <div class=\"chart-area\">\r\n                        <canvas id=\"myAreaChart\"></canvas>\r\n                    </div>\r\n                </div>\r\n            </div>\r\n        </div>\r\n\r\n        <!-- Pie Chart -->\r\n        <div class=\"col-xl-4 col-lg-5\">\r\n            <div class=\"card shadow mb-4\">\r\n                <!-- Card Header - Dropdown -->\r\n                <div class=\"card-header py-3 d-flex flex-row align-items-center justify-content-between\">\r\n                    <h6 class=\"m-0 font-weight-bold text-primary\">Biểu đồ đơn hàng mỗi loại sản phẩm</h6>\r\n\r\n                </div>\r\n                <!-- Card Body -->\r\n                <div class=\"card-body\">\r\n                    <div class=\"chart-pie pt-4 pb-2\">\r\n                        <canvas id=\"myPieChart\"></canvas>\r\n                    </div>\r\n                    <div class=\"mt-4 text-center small\">\r\n                        <span class=\"mr-2\">\r\n                            <i class=\"fas fa-circle text-primary\"></i> Direct\r\n                        </span>\r\n                        <span class=\"mr-2\">\r\n                            <i class=\"fas fa-circle text-success\"></i> Social\r\n                        </span>\r\n                        <span class=\"mr-2\">\r\n                            <i class=\"fas fa-circle text-info\"></i> Referral\r\n                        </span>\r\n                    </div>\r\n                </div>\r\n            </div>\r\n        </div>\r\n    </div>\r\n\r\n    <!-- Content Row -->\r\n    <div class=\"row\">\r\n\r\n        <!-- Content Column -->\r\n        <div class=\"col-lg-6 mb-4\">\r\n\r\n            <!-- Project Card Example -->\r\n            <div class=\"card shadow mb-4\">\r\n                <div class=\"card-header py-3\">\r\n                    <h6 class=\"m-0 font-weight-bold text-primary\">Sản phẩm mỗi loại trên tổng số</h6>\r\n                </div>\r\n                <div class=\"card-body\">\r\n                    <h4 class=\"small font-weight-bold\">Server Migration <span class=\"float-right\">20%(số lượng)</span>\r\n                    </h4>\r\n                    <div class=\"progress mb-4\">\r\n                        <div class=\"progress-bar bg-danger\" role=\"progressbar\" style=\"width: 20%\" aria-valuenow=\"20\" aria-valuemin=\"0\" aria-valuemax=\"100\"></div>\r\n                    </div>\r\n                    <h4 class=\"small font-weight-bold\">Sales Tracking <span class=\"float-right\">40%(số lượng)</span>\r\n                    </h4>\r\n                    <div class=\"progress mb-4\">\r\n                        <div class=\"progress-bar bg-warning\" role=\"progressbar\" style=\"width: 40%\" aria-valuenow=\"40\" aria-valuemin=\"0\" aria-valuemax=\"100\"></div>\r\n                    </div>\r\n                    <h4 class=\"small font-weight-bold\">Customer Database <span class=\"float-right\">60%(số lượng)</span>\r\n                    </h4>\r\n                    <div class=\"progress mb-4\">\r\n                        <div class=\"progress-bar\" role=\"progressbar\" style=\"width: 60%\" aria-valuenow=\"60\" aria-valuemin=\"0\" aria-valuemax=\"100\"></div>\r\n                    </div>\r\n                    <!-- <h4 class=\"small font-weight-bold\">Payout Details <span class=\"float-right\">80%</span></h4>\r\n                    <div class=\"progress mb-4\">\r\n                        <div class=\"progress-bar bg-info\" role=\"progressbar\" style=\"width: 80%\" aria-valuenow=\"80\"\r\n                            aria-valuemin=\"0\" aria-valuemax=\"100\"></div>\r\n                    </div> -->\r\n                    <h4 class=\"small font-weight-bold\">Tổng <span class=\"float-right\">Tổng số</span></h4>\r\n                    <div class=\"progress\">\r\n                        <div class=\"progress-bar bg-success\" role=\"progressbar\" style=\"width: 100%\" aria-valuenow=\"100\" aria-valuemin=\"0\" aria-valuemax=\"100\"></div>\r\n                    </div>\r\n                </div>\r\n            </div>\r\n\r\n        </div>\r\n\r\n\r\n    </div>\r\n\r\n</div>\r\n<!-- /.container-fluid -->\r\n\r\n\r\n<!-- End of Main Content -->\r\n<?php include \"views/layout/admin/Footer.php\"; ?>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/views/home/admin/Home.php b/views/home/admin/Home.php
+--- a/views/home/admin/Home.php	(revision 07fddab062bf72432a7a10b09c4abca666b81869)
++++ b/views/home/admin/Home.php	(date 1700064444435)
+@@ -1,4 +1,5 @@
+ <?php include "views/layout/admin/Header.php";
++echo $_SESSION['role']
+ ?>
+ <!-- Begin Page Content -->
+ <div class="container-fluid">
+Index: .idea/dat1.iml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/dat1.iml b/.idea/dat1.iml
+new file mode 100644
+--- /dev/null	(date 1700062779954)
++++ b/.idea/dat1.iml	(date 1700062779954)
+@@ -0,0 +1,8 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<module type="WEB_MODULE" version="4">
++  <component name="NewModuleRootManager">
++    <content url="file://$MODULE_DIR$" />
++    <orderEntry type="inheritedJdk" />
++    <orderEntry type="sourceFolder" forTests="false" />
++  </component>
++</module>
+\ No newline at end of file
+Index: .idea/modules.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/modules.xml b/.idea/modules.xml
+new file mode 100644
+--- /dev/null	(date 1700062780113)
++++ b/.idea/modules.xml	(date 1700062780113)
+@@ -0,0 +1,8 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<project version="4">
++  <component name="ProjectModuleManager">
++    <modules>
++      <module fileurl="file://$PROJECT_DIR$/.idea/dat1.iml" filepath="$PROJECT_DIR$/.idea/dat1.iml" />
++    </modules>
++  </component>
++</project>
+\ No newline at end of file
