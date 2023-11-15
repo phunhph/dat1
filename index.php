@@ -1,3 +1,4 @@
+
 <?php
 
 session_start();
@@ -126,33 +127,39 @@ switch ($controller) {
         break;
     case 'tacGia_add':
         $TacGiaController = new TacGiaController();
-        $TacGiaController->index();
+        $TacGiaController->add();
         break;
     case 'tacGia_fix':
         $TacGiaController = new TacGiaController();
-        $TacGiaController->index();
+        $TacGiaController->update();
         break;
     case 'tacGia_delete':
         $TacGiaController = new TacGiaController();
-        $TacGiaController->index();
+        $TacGiaController->delete();
         break;
     case 'taiKhoan':
         $TaiKhoansController = new TaiKhoanController();
         $TaiKhoansController->index();
         break;
+    case 'taiKhoan_add':
+        $TaiKhoansController = new TaiKhoanController();
+        $TaiKhoansController->add();
+        break;
     case 'taiKhoan_fix':
         $TaiKhoansController = new TaiKhoanController();
-        $TaiKhoansController->index();
+        $TaiKhoansController->fix();
         break;
     case 'taiKhoan_delete':
         $TaiKhoansController = new TaiKhoanController();
-        $TaiKhoansController->index();
+        $TaiKhoansController->delete();
         break;
-    case 'binhluan':
+    case 'binhLuan':
+        $BinhLuanController = new BinhLuanController();
+        $BinhLuanController->index();
         break;
-    case 'binhluan_add':
+    case 'binhLuan_add':
         break;
-    case 'binhluan_delete':
+    case 'binhLuan_delete':
         break;
     case 'theodoi':
         break;
@@ -172,7 +179,15 @@ switch ($controller) {
         $SettingController = new SettingController();
         $SettingController->index();
         break;
+    case 'chatBox':
+        $ChatBoxController = new ChatBoxController();
+        $ChatBoxController->index();
+        break;
+    case 'chatBox_mes':
+        $ChatBoxController = new ChatBoxController();
+        $ChatBoxController->chat();
+        break;
     default:
         break;
 }
-// unset($_SESSION['error']);
+unset($_SESSION['error']);

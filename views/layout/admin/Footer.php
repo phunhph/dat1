@@ -70,6 +70,8 @@
 
 <!-- Page level custom scripts -->
 <script src="assets/js/demo/datatables-demo.js"></script>
+<!-- inform
+<script src="assets/js/users-event.js"></script> -->
 </body>
 
 </html>
