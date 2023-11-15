@@ -5,7 +5,7 @@
 <!-- /.container-fluid -->
 <div class="container-fluid">
     <!-- Page Heading -->
-    <h1 class="h3 mb-2 text-gray-800">Danh sách nhà phát hành</h1>
+    <h1 class="h3 mb-2 text-gray-800">Danh sách Nhà Phát Hành</h1>
 
     <!-- DataTales Example -->
     <div class="card shadow mb-4">
@@ -16,8 +16,8 @@
 
                         <tr>
                             <th>STT</th>
-                            <th>Tên nhà phát hành</th>
-                            <th>Số lượng tác phẩm</th>
+                            <th>Tên Nhà Phát Hành</th>
+                            <th>Số lượng</th>
                             <th>Trạng thái</th>
                             <th>button</th>
                         </tr>
@@ -25,21 +25,26 @@
                     <tfoot>
                         <tr>
                             <th>STT</th>
-                            <th>Tên nhà phát hành</th>
-                            <th>Số lượng tác phẩm</th>
+                            <th>Tên Nhà Phát Hành</th>
+                            <th>Số lượng</th>
                             <th>Trạng thái</th>
                             <th>button</th>
                         </tr>
                     </tfoot>
                     <tbody>
-                        <tr>
-                            <td>Tiger Nixon</td>
-                            <td>System Architect</td>
-                            <td>Edinburgh</td>
-                            <td>61</td>
-                            <td>2011/04/25</td>
+                        <?php foreach ($list as $key => $vl) { ?>
+                            <tr>
+                                <td><?php echo $key + 1 ?></td>
+                                <td><?php echo $vl->ten ?></td>
+                                <td>Edinburgh</td>
+                                <td><?php echo $vl->trang_thai ?></td>
+                                <td>
+                                    <a href="index.php?controller=nhaPhatHanh_delete&id=<?php echo $vl->id ?>">xoá</a>/
+                                    <a href="index.php?controller=nhaPhatHanh_fix&id=<?php echo $vl->id ?>">sửa</a>
+                                </td>
 
-                        </tr>
+                            </tr>
+                        <?php } ?>
                     </tbody>
                 </table>
             </div>

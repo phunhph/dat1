@@ -32,14 +32,19 @@
                         </tr>
                     </tfoot>
                     <tbody>
-                        <tr>
-                            <td>Tiger Nixon</td>
-                            <td>System Architect</td>
-                            <td>Edinburgh</td>
-                            <td>61</td>
-                            <td>2011/04/25</td>
+                        <?php foreach ($list as $key => $vl) { ?>
+                            <tr>
+                                <td><?php echo $key + 1 ?></td>
+                                <td><?php echo $vl->ten ?></td>
+                                <td>Edinburgh</td>
+                                <td><?php echo $vl->trang_thai ?></td>
+                                <td>
+                                    <a href="index.php?controller=boTruyen_delete&id=<?php echo $vl->id ?>">xoá</a>/
+                                    <a href="index.php?controller=boTruyen_fix&id=<?php echo $vl->id ?>">sửa</a>
+                                </td>
 
-                        </tr>
+                            </tr>
+                        <?php } ?>
                     </tbody>
                 </table>
             </div>

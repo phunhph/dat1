@@ -6,11 +6,7 @@
 <div class="container-fluid">
     <!-- Page Heading -->
     <h1 class="h3 mb-2 text-gray-800">Danh sách Tác giả</h1>
-    <h1>
-        <?php if (isset($_SESSION['error'])) {
-            echo $_SESSION['error'];
-        } ?>
-    </h1>
+
     <!-- DataTales Example -->
     <div class="card shadow mb-4">
         <div class="card-body">
@@ -35,19 +31,13 @@
                         </tr>
                     </tfoot>
                     <tbody>
-                        <?php foreach ($list as $key => $value) {
-                        ?>
                         <tr>
-                            <td><?php echo $key + 1 ?></td>
-                            <td><?php echo $value->name ?></td>
-                            <td><?php echo $value->soluong ?></td>
-                            <td><?php echo $value->trang_thai ?></td>
-                            <td>
-                                <a href="index.php?controller=tacGia_delete&id=<?php echo $value->id ?>">Xoá</a>
-                                /<a href="index.php?controller=tacGia_fix&id=<?php echo $value->id ?>">Sửa</a>
-                            </td>
+                            <td>Tiger Nixon</td>
+                            <td>System Architect</td>
+                            <td>Edinburgh</td>
+                            <td>61</td>
+                            <td>2011/04/25</td>
                         </tr>
-                        <?php } ?>
                     </tbody>
                 </table>
             </div>
