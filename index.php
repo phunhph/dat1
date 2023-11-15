@@ -13,6 +13,7 @@ include 'controllers/NhaXuatBanController.php';
 include 'controllers/TacGiaController.php';
 include 'controllers/TaiKhoanController.php';
 include 'controllers/ChatBoxController.php';
+include 'controllers/BinhLuanController.php';
 
 $controller = $_GET['controller'] ?? 'home';
 // routing controller
@@ -155,11 +156,13 @@ switch ($controller) {
         $TaiKhoansController = new TaiKhoanController();
         $TaiKhoansController->delete();
         break;
-    case 'binhluan':
+    case 'binhLuan':
+        $BinhLuanController = new BinhLuanController();
+        $BinhLuanController->index();
         break;
-    case 'binhluan_add':
+    case 'binhLuan_add':
         break;
-    case 'binhluan_delete':
+    case 'binhLuan_delete':
         break;
     case 'theodoi':
         break;
