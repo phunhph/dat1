@@ -46,6 +46,10 @@ switch ($controller) {
         $ProductController = new ProductController();
         $ProductController->fix();
         break;
+    case 'sanPham_fix_dlimg':
+        $ProductController = new ProductController();
+        $ProductController->sanPham_fix_dlimg();
+        break;
         case 'sanPham_delete':
         $ProductController = new ProductController();
         $ProductController->delete();
@@ -136,15 +140,15 @@ switch ($controller) {
         break;
     case 'tacGia_add':
         $TacGiaController = new TacGiaController();
-        $TacGiaController->index();
+        $TacGiaController->add();
         break;
     case 'tacGia_fix':
         $TacGiaController = new TacGiaController();
-        $TacGiaController->index();
+        $TacGiaController->update();
         break;
     case 'tacGia_delete':
         $TacGiaController = new TacGiaController();
-        $TacGiaController->index();
+        $TacGiaController->delete();
         break;
     case 'taiKhoan':
         $TaiKhoansController = new TaiKhoanController();
@@ -185,3 +189,4 @@ switch ($controller) {
     default:
         break;
 }
+unset($_SESSION['error']);
